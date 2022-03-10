@@ -1,10 +1,19 @@
 import { Component } from '@angular/core';
 
+import { MessageService } from './message.service';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
-  title = 'tour-of-heroes';
+    title = 'Tour of Heroes';
+
+    constructor(private messageService: MessageService) {}
+
+    onClick(): void {
+        this.messageService.clear();
+    }
+
 }
